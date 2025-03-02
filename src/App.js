@@ -1,8 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './component/Header';
+import { Footer } from './component/Footer';
+import { TodoList } from './component/TodoList';
+import { Login } from './component/Login';
+import { Register } from './component/Register';
 
 function App() {
   return (
+    <>
+    <Header />
+    <Login />
+    <Register />
+    <TodoList />
+    <Footer />
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +30,7 @@ function App() {
         </a>
       </header>
     </div>
+    </>
   );
 }
 
