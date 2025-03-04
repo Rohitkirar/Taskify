@@ -1,9 +1,9 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const Login = () => {
   return (
     <>
-      <div className="card p-4 shadow-lg container w-50 ">
+      <div className="card p-4 shadow-lg container w-50 mt-5">
         <h3 className="text-center">Login</h3>
         <form>
           <div className="mb-3">
@@ -31,7 +31,7 @@ export const Login = () => {
             <a href="#">Forgot password?</a>
           </div>
           <div className="text-center mt-2">
-            Don't have an account? <a href="register.html">Register</a>
+            Don't have an account? <Link to="/register">Register</Link>
           </div>
         </form>
       </div>

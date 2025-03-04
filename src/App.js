@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { BrowserRouter as Router, Routes , Route  } from 'react-router-dom';
 import './App.css';
 import { Header } from './component/Header';
 import { Footer } from './component/Footer';
@@ -9,11 +10,16 @@ import { Register } from './component/Register';
 function App() {
   return (
     <>
-    <Header />
-    <Login />
-    <Register />
-    <TodoList />
-    <Footer />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<TodoList />} />
+      </Routes>
+      <Footer />
+    </Router>
+{/* 
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -29,7 +35,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </div> */}
     </>
   );
 }

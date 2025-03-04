@@ -1,13 +1,14 @@
 import React from "react";
-
+import { Link, useLocation } from "react-router-dom";
 export const Header = () => {
+  const location = useLocation();
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Todo List
-          </a>
+          <Link className="navbar-brand" to="/">
+            Taskify
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,24 +23,24 @@ export const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="#">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className={`nav-link ${location.pathname === "/login" ? "active" : ""}`}  to="/login">
                   Login
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className={`nav-link ${location.pathname === "/register" ? "active" : ""}`} to="/register">
                   Register
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
